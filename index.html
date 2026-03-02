@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Progress</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <div>
+          <h1 class="title">Research Progress</h1>
+          <p class="subtitle">Weekly / bi-weekly updates for review</p>
+        </div>
+
+        <nav class="nav">
+          <a href="#tank">Tank-scale tests</a>
+          <a href="#rh">Relative humidity tests</a>
+          <a href="#questions">Questions</a>
+        </nav>
+      </div>
+
+      <!-- Update this block each week -->
+      <div class="latest-update">
+        <div class="badge">Latest update</div>
+        <div class="update-meta">
+          <div class="update-date">2026-03-01</div>
+          <div class="update-text">
+            Reprocessed tank test plots with the newest data through <strong>YYYY-MM-DD</strong>.
+            Added residual diagnostics and updated the overview figure. RH section: refreshed summary figure.
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- =========================
+         TANK-SCALE TESTS SECTION
+         ========================= -->
+    <section id="tank" class="card">
+      <div class="card-header">
+        <h2>Tank-scale tests</h2>
+        <p class="muted">
+          Ongoing analysis updates, interpretation notes, and latest figures.
+        </p>
+      </div>
+
+      <!-- Update paragraphs as needed -->
+      <div class="card-body prose">
+        <h3>This week</h3>
+        <ul>
+          <li>Updated preprocessing pipeline and re-exported the canonical figures.</li>
+          <li>Checked consistency across runs; noted any anomalies below.</li>
+          <li>Next: verify boundary conditions and finalize the metric definitions for the next batch.</li>
+        </ul>
+
+        <h3>Notes</h3>
+        <p>
+          Add short, PI-readable interpretation here. Keep it to a few sentences. If something looks odd,
+          call it out explicitly and reference the figure caption.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <!-- Replace image files each week (same filenames). -->
+        <figure class="plot">
+          <a href="assets/tank/tank_overview.png" target="_blank" rel="noopener">
+            <img src="assets/tank/tank_overview.png?v=20260301" alt="Tank overview plot" loading="lazy" />
+          </a>
+          <figcaption><strong>Tank overview.</strong> High-level trend summary and key annotations.</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/tank/tank_timeseries.png" target="_blank" rel="noopener">
+            <img src="assets/tank/tank_timeseries.png?v=20260301" alt="Tank time series plot" loading="lazy" />
+          </a>
+          <figcaption><strong>Time series.</strong> Updated through the latest ingest window.</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/tank/tank_residuals.png" target="_blank" rel="noopener">
+            <img src="assets/tank/tank_residuals.png?v=20260301" alt="Tank residual diagnostics plot" loading="lazy" />
+          </a>
+          <figcaption><strong>Residual diagnostics.</strong> Used to confirm stability and detect drift/outliers.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Optional: add more plots by copying a <figure> block -->
+      <div class="card-body">
+        <details class="details">
+          <summary>Add / archive notes</summary>
+          <div class="prose">
+            <p>
+              Use this collapsible area for longer notes, older context, or items you don’t want in the main flow.
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- =========================
+         RH TESTS SECTION
+         ========================= -->
+    <section id="rh" class="card">
+      <div class="card-header">
+        <h2>Relative humidity tests</h2>
+        <p class="muted">
+          Brief summary + one or two figures with comments.
+        </p>
+      </div>
+
+      <div class="card-body prose">
+        <h3>This week</h3>
+        <p>
+          Short update. Example: “Recomputed RH-derived response metrics; verified sensor calibration stability;
+          the updated scatter shows improved clustering after filtering.”
+        </p>
+
+        <h3>Comments</h3>
+        <ul>
+          <li>Comment 1 (what changed / what to look at).</li>
+          <li>Comment 2 (what looks consistent / what is uncertain).</li>
+        </ul>
+      </div>
+
+      <div class="gallery two-col">
+        <figure class="plot">
+          <a href="assets/rh/rh_overview.png" target="_blank" rel="noopener">
+            <img src="assets/rh/rh_overview.png?v=20260301" alt="RH overview plot" loading="lazy" />
+          </a>
+          <figcaption><strong>RH overview.</strong> Key summary figure for the current run.</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/rh/rh_scatter.png" target="_blank" rel="noopener">
+            <img src="assets/rh/rh_scatter.png?v=20260301" alt="RH scatter plot" loading="lazy" />
+          </a>
+          <figcaption><strong>Scatter / diagnostic.</strong> Used for quick sanity-check review.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =========================
+         QUESTIONS SECTION
+         ========================= -->
+    <section id="questions" class="card">
+      <div class="card-header">
+        <h2>Questions for PI</h2>
+        <p class="muted">Keep these specific and reviewable.</p>
+      </div>
+
+      <div class="card-body prose">
+        <ol>
+          <li>
+            In the tank residual diagnostics, do you prefer we prioritize reducing drift at late times even if it slightly
+            increases early-time error?
+          </li>
+          <li>
+            For the RH tests, should we report uncertainty as (a) bootstrap CI, (b) sensor-spec-based bounds,
+            or (c) both on the same figure?
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="muted">
+        Tip: click any image to open full-resolution in a new tab.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
