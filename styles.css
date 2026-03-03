@@ -13,6 +13,8 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
 body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
   background: radial-gradient(1200px 800px at 20% -10%, rgba(122,162,255,0.25), transparent 60%),
@@ -27,22 +29,60 @@ body{
   margin: 0 auto;
 }
 
+/* =========================
+   HEADER
+   - Desktop: only the top row (title + tabs) is sticky
+   - Latest update bubble scrolls normally
+   - Mobile: nothing sticky
+   ========================= */
+
 .site-header{
   padding: 28px 0 18px;
   border-bottom: 1px solid var(--border);
   background: rgba(10,11,15,0.6);
   backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
+  position: static;   /* default: not sticky */
+  top: auto;
   z-index: 10;
 }
 
+/* Make ONLY the top row sticky on larger screens */
 .header-top{
   display: flex;
   gap: 16px;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  /* sticky behavior */
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  /* background so content doesn't show through while scrolling */
+  background: rgba(10,11,15,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+
+  /* keep it visually consistent with your header spacing */
+  padding: 14px 0;
+  margin-bottom: 10px;
+}
+
+/* On mobile: remove all sticky behavior completely */
+@media (max-width: 640px){
+  .header-top{
+    position: static;
+    top: auto;
+    backdrop-filter: none;
+    background: transparent;
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .site-header{
+    backdrop-filter: none; /* reduces jank on some phones */
+  }
 }
 
 .title{
@@ -77,7 +117,7 @@ body{
 }
 
 .latest-update{
-  margin-top: 16px;
+  margin-top: 6px;
   border: 1px solid var(--border);
   background: rgba(18,20,27,0.8);
   border-radius: var(--radius);
@@ -89,6 +129,15 @@ body{
   align-items: start;
 }
 
+/* Slightly compact latest update on mobile */
+@media (max-width: 640px){
+  .latest-update{
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+}
+
 .badge{
   font-size: 12px;
   color: var(--bg);
@@ -96,6 +145,7 @@ body{
   border-radius: 999px;
   padding: 6px 10px;
   font-weight: 650;
+  width: fit-content;
 }
 
 .update-date{
@@ -134,6 +184,10 @@ body{
   padding: var(--pad);
 }
 
+.prose{
+  max-width: 72ch;
+}
+
 .prose h3{
   margin: 0 0 10px;
   font-size: 15px;
@@ -162,6 +216,10 @@ body{
   }
 }
 
+section{
+  scroll-margin-top: 18px; /* helpful for anchor jumps */
+}
+
 /* Each plot block */
 .plot{
   margin: 0;
@@ -175,6 +233,9 @@ body{
   width: 100%;
   height: auto;
   display: block;
+  max-height: 460px;     /* keeps plots from dominating the viewport */
+  object-fit: contain;   /* no cropping */
+  background: rgba(10,11,15,0.25);
 }
 
 .plot figcaption{
