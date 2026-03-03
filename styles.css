@@ -236,3 +236,11 @@ section{
   padding: 10px 0 30px;
   text-align: center;
 }
+
+/* ===== Desktop-only: center the prose blocks inside cards ===== */
+@media (min-width: 860px){
+  .card-body.prose{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
