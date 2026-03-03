@@ -30,23 +30,18 @@ body{
 }
 
 /* =========================
-   HEADER
-   - Desktop: only the top row (title + tabs) is sticky
-   - Latest update bubble scrolls normally
-   - Mobile: nothing sticky
+   HEADER (NOT STICKY ANYWHERE)
    ========================= */
-
 .site-header{
   padding: 28px 0 18px;
   border-bottom: 1px solid var(--border);
   background: rgba(10,11,15,0.6);
   backdrop-filter: blur(8px);
-  position: static;   /* default: not sticky */
-  top: auto;
-  z-index: 10;
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
 }
 
-/* Make ONLY the top row sticky on larger screens */
 .header-top{
   display: flex;
   gap: 16px;
@@ -54,35 +49,14 @@ body{
   justify-content: space-between;
   flex-wrap: wrap;
 
-  /* sticky behavior */
-  position: sticky;
-  top: 0;
-  z-index: 20;
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
 
-  /* background so content doesn't show through while scrolling */
-  background: rgba(10,11,15,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-
-  /* keep it visually consistent with your header spacing */
-  padding: 14px 0;
-  margin-bottom: 10px;
-}
-
-/* On mobile: remove all sticky behavior completely */
-@media (max-width: 640px){
-  .header-top{
-    position: static;
-    top: auto;
-    backdrop-filter: none;
-    background: transparent;
-    border-bottom: none;
-    padding: 0;
-    margin-bottom: 10px;
-  }
-  .site-header{
-    backdrop-filter: none; /* reduces jank on some phones */
-  }
+  background: transparent;
+  border-bottom: none;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .title{
@@ -117,7 +91,7 @@ body{
 }
 
 .latest-update{
-  margin-top: 6px;
+  margin-top: 16px;
   border: 1px solid var(--border);
   background: rgba(18,20,27,0.8);
   border-radius: var(--radius);
@@ -129,12 +103,14 @@ body{
   align-items: start;
 }
 
-/* Slightly compact latest update on mobile */
 @media (max-width: 640px){
   .latest-update{
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 12px 14px;
+  }
+  .site-header{
+    backdrop-filter: none;
   }
 }
 
@@ -217,7 +193,7 @@ body{
 }
 
 section{
-  scroll-margin-top: 18px; /* helpful for anchor jumps */
+  scroll-margin-top: 18px;
 }
 
 /* Each plot block */
@@ -233,8 +209,8 @@ section{
   width: 100%;
   height: auto;
   display: block;
-  max-height: 460px;     /* keeps plots from dominating the viewport */
-  object-fit: contain;   /* no cropping */
+  max-height: 460px;
+  object-fit: contain;
   background: rgba(10,11,15,0.25);
 }
 
