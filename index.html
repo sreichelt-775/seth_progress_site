@@ -29,7 +29,7 @@
         <div class="update-meta">
           <div class="update-date">2026-03-02</div>
           <div class="update-text">
-            Initial cleaned exports uploaded and organized. Tank-scale section includes dielectric, heater/soil temperatures, and RH sensor repair plots.
+            Initial cleaned exports uploaded and organized. The tank-scale section includes dielectric, heater/soil temperatures, and RH sensor repair plots.
             The RH_Test1 section contains the separate RH_Test1_data plot and the current sample plan.
           </div>
         </div>
@@ -51,42 +51,40 @@
       <div class="card-body prose">
         <h3>Update summary (2026-02-26 pull)</h3>
         <p>
-          The dielectric_plot_800hours, dielectric_plot_temp_800hours, data_at_800_hours_heater_temp, data_at_800_hours_soil_temp,
-          data_at_800_hours_RH_temp_before_smoothing, and 800_hours_RH_percent_before_smoothing show the initial data from the first
-          ~853 hours (pulled 2/26). I cleaned the data in Python because applying calibration factors in Excel was unstable due to the
-          number of columns. The cleaned exports are saved, and I can replot in Excel later if you prefer. As discussed, I also reduced
-          the sampling rate from 10 seconds to 1 minute (Yu’s original configuration was 10 seconds).
+          The plots below show the initial data from the first ~853 hours (pulled 2/26). I cleaned the data in Python because applying
+          calibration factors in Excel was unstable due to the number of columns. The cleaned exports are saved, and I can replot in Excel
+          later if you prefer. As discussed, I also reduced the sampling rate from 10 seconds to 1 minute (Yu’s original configuration was
+          10 seconds).
         </p>
       </div>
 
-      <!-- NOTE: Filenames below match your current repo screenshot exactly. -->
       <div class="gallery">
         <figure class="plot">
           <a href="assets/tank/dielectric_plot_800hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dielectric_plot_800hours.png?v=20260302" alt="dielectric_plot_800hours" loading="lazy" />
+            <img src="assets/tank/dielectric_plot_800hours.png?v=20260302" alt="Dielectric (first ~800 hours)" loading="lazy" />
           </a>
-          <figcaption><strong>dielectric_plot_800hours</strong></figcaption>
+          <figcaption><strong>Dielectric</strong> (first ~800 hours)</figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/dielectric_temp_plot_800hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dielectric_temp_plot_800hours.png?v=20260302" alt="dielectric_temp_plot_800hours" loading="lazy" />
+            <img src="assets/tank/dielectric_temp_plot_800hours.png?v=20260302" alt="Dielectric temperature (first ~800 hours)" loading="lazy" />
           </a>
-          <figcaption><strong>dielectric_temp_plot_800hours</strong></figcaption>
+          <figcaption><strong>Dielectric temperature</strong> (first ~800 hours)</figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_heater_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_heater_temp.png?v=20260302" alt="data_at_800_hours_heater_temp" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_heater_temp.png?v=20260302" alt="Heater temperature" loading="lazy" />
           </a>
-          <figcaption><strong>data_at_800_hours_heater_temp</strong></figcaption>
+          <figcaption><strong>Heater temperature</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_soil_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_soil_temp.png?v=20260302" alt="data_at_800_hours_soil_temp" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_soil_temp.png?v=20260302" alt="Soil temperature" loading="lazy" />
           </a>
-          <figcaption><strong>data_at_800_hours_soil_temp</strong></figcaption>
+          <figcaption><strong>Soil temperature</strong></figcaption>
         </figure>
       </div>
 
@@ -100,47 +98,46 @@
         </p>
         <p>
           I repaired the flagged segments using SciPy PCHIP interpolation, constrained to physically reasonable bounds consistent with
-          typical sensor calibration tolerance. This brought the data back onto the prior trend with only mild variation.
-          fixed_Rh_data shows the repaired overlay, and data_at_800_hours_RH_percent_repaired and data_at_800_hours_RH_temp_repaired
-          show the full cleaned plots. I’m going to pause LabVIEW, inspect the setup, and replace the power source to see if this recurs
-          in future runs.
+          typical sensor calibration tolerance. This brought the data back onto the prior trend with only mild variation. The plots below
+          show the RH% and RH temperature signals before and after repair, along with an overlay of raw vs. repaired data. I’m going to
+          pause LabVIEW, inspect the setup, and replace the power source to see if this recurs in future runs.
         </p>
       </div>
 
       <div class="gallery">
         <figure class="plot">
           <a href="assets/tank/800_hours_RH_percent_before_smoothing.png" target="_blank" rel="noopener">
-            <img src="assets/tank/800_hours_RH_percent_before_smoothing.png?v=20260302" alt="800_hours_RH_percent_before_smoothing" loading="lazy" />
+            <img src="assets/tank/800_hours_RH_percent_before_smoothing.png?v=20260302" alt="RH percent (before repair)" loading="lazy" />
           </a>
-          <figcaption><strong>800_hours_RH_percent_before_smoothing</strong></figcaption>
+          <figcaption><strong>RH%</strong> (before repair)</figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_RH_temp_before_smoothing.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_RH_temp_before_smoothing.png?v=20260302" alt="data_at_800_hours_RH_temp_before_smoothing" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_RH_temp_before_smoothing.png?v=20260302" alt="RH temperature (before repair)" loading="lazy" />
           </a>
-          <figcaption><strong>data_at_800_hours_RH_temp_before_smoothing</strong></figcaption>
+          <figcaption><strong>RH temperature</strong> (before repair)</figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/fixed_Rh_data.png" target="_blank" rel="noopener">
-            <img src="assets/tank/fixed_Rh_data.png?v=20260302" alt="fixed_Rh_data" loading="lazy" />
+            <img src="assets/tank/fixed_Rh_data.png?v=20260302" alt="RH overlay (raw vs repaired)" loading="lazy" />
           </a>
-          <figcaption><strong>fixed_Rh_data</strong></figcaption>
+          <figcaption><strong>Overlay</strong> (raw vs. repaired)</figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_RH_percent_repaired.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_RH_percent_repaired.png?v=20260302" alt="data_at_800_hours_RH_percent_repaired" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_RH_percent_repaired.png?v=20260302" alt="RH percent (repaired)" loading="lazy" />
           </a>
-          <figcaption><strong>data_at_800_hours_RH_percent_repaired</strong></figcaption>
+          <figcaption><strong>RH%</strong> (repaired)</figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_RH_temp_repaired.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_RH_temp_repaired.png?v=20260302" alt="data_at_800_hours_RH_temp_repaired" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_RH_temp_repaired.png?v=20260302" alt="RH temperature (repaired)" loading="lazy" />
           </a>
-          <figcaption><strong>data_at_800_hours_RH_temp_repaired</strong></figcaption>
+          <figcaption><strong>RH temperature</strong> (repaired)</figcaption>
         </figure>
       </div>
     </section>
@@ -156,11 +153,11 @@
 
       <div class="card-body prose">
         <p>
-          RH_Test1_data shows what we already discussed. I am still in the process of making new samples, and I will proceed as you
-          recommended by restarting the two highest-suction salts (LiCl and K2CO3) at 20°C and taking periodic weights to monitor
-          equilibrium. I will then ramp the salts to the 40°C interval and again monitor mass until negligible change occurs and
-          equilibrium is confirmed. After equilibrium is confirmed, I will pull them, take final volumetric measurements, and reuse
-          them for the next temperature step to 80°C. Apologies for my oversight on this previously.
+          The plot below shows RH_Test1 as previously discussed. I am still in the process of making new samples, and I will proceed as you
+          recommended by restarting the two highest-suction salts (LiCl and K2CO3) at 20°C and taking periodic weights to monitor equilibrium.
+          I will then ramp the salts to 40°C and again monitor mass until negligible change occurs and equilibrium is confirmed. After equilibrium
+          is confirmed, I will pull them, take final volumetric measurements, and reuse them for the next temperature step to 80°C. Apologies for
+          my oversight on this previously.
         </p>
         <p>
           I want to ensure the RH sensors are working before increasing the heater temperature. The highest temperature around the RH
@@ -171,9 +168,9 @@
       <div class="gallery two-col">
         <figure class="plot">
           <a href="assets/rh/RH_Test1_data.png" target="_blank" rel="noopener">
-            <img src="assets/rh/RH_Test1_data.png?v=20260302" alt="RH_Test1_data" loading="lazy" />
+            <img src="assets/rh/RH_Test1_data.png?v=20260302" alt="RH Test 1 data" loading="lazy" />
           </a>
-          <figcaption><strong>RH_Test1_data</strong></figcaption>
+          <figcaption><strong>RH Test 1</strong> (current status)</figcaption>
         </figure>
       </div>
     </section>
