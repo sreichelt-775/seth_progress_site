@@ -237,10 +237,11 @@ section{
   text-align: center;
 }
 
-/* ===== Desktop-only: center the prose blocks inside cards ===== */
+/* ===== Desktop-only: center the prose content block (without changing mobile) ===== */
 @media (min-width: 860px){
   .card-body.prose{
-    margin-left: auto;
+    max-width: 72ch;         /* make it a narrower block */
+    margin-left: auto;       /* center the block */
     margin-right: auto;
   }
 }
