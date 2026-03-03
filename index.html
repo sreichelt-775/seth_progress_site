@@ -29,8 +29,8 @@
         <div class="update-meta">
           <div class="update-date">2026-03-02</div>
           <div class="update-text">
-            Initial cleaned exports uploaded and organized. Tank-scale section includes dielectric, heater/soil temps, and RH sensor repair plots.
-            RH_Test1 section contains the separate RH_Test1_data plot and sample plan.
+            Initial cleaned exports uploaded and organized. Tank-scale section includes dielectric, heater/soil temperatures, and RH sensor repair plots.
+            The RH_Test1 section contains the separate RH_Test1_data plot and the current sample plan.
           </div>
         </div>
       </div>
@@ -52,38 +52,39 @@
         <h3>Update summary (2026-02-26 pull)</h3>
         <p>
           The dielectric_plot_800hours, dielectric_plot_temp_800hours, data_at_800_hours_heater_temp, data_at_800_hours_soil_temp,
-          data_at_800_hours_RH_temp_before_smoothing, and 800_hours_RH_percent_before_smoothing show the intial data from the first
-          853 hours which I pulled last week (2/26). I cleaned the data in python as adding the calibrations factors ended up crashing
-          the excel due to having so many columns. I saved them and can replot them in excel in the future if you prefer. As we
-          discussed I also kicked back the sampling rate to every minture instead of ten seconds which Yu had used.
+          data_at_800_hours_RH_temp_before_smoothing, and 800_hours_RH_percent_before_smoothing show the initial data from the first
+          ~853 hours (pulled 2/26). I cleaned the data in Python because applying calibration factors in Excel was unstable due to the
+          number of columns. The cleaned exports are saved, and I can replot in Excel later if you prefer. As discussed, I also reduced
+          the sampling rate from 10 seconds to 1 minute (Yu’s original configuration was 10 seconds).
         </p>
       </div>
 
+      <!-- NOTE: Filenames below match your current repo screenshot exactly. -->
       <div class="gallery">
         <figure class="plot">
-          <a href="assets/tank/dieletic_plot_800hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dieletic_plot_800hours.png?v=20260302" alt="Dielectric plot (800 hours)" loading="lazy" />
+          <a href="assets/tank/dielectric_plot_800hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_plot_800hours.png?v=20260302" alt="dielectric_plot_800hours" loading="lazy" />
           </a>
-          <figcaption><strong>dieletic_plot_800hours</strong></figcaption>
+          <figcaption><strong>dielectric_plot_800hours</strong></figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/dieletic_temp_plot_800hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dieletic_temp_plot_800hours.png?v=20260302" alt="Dielectric temperature plot (800 hours)" loading="lazy" />
+          <a href="assets/tank/dielectric_temp_plot_800hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_temp_plot_800hours.png?v=20260302" alt="dielectric_temp_plot_800hours" loading="lazy" />
           </a>
-          <figcaption><strong>dieletic_temp_plot_800hours</strong></figcaption>
+          <figcaption><strong>dielectric_temp_plot_800hours</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_heater_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_heater_temp.png?v=20260302" alt="Heater temperature (800 hours)" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_heater_temp.png?v=20260302" alt="data_at_800_hours_heater_temp" loading="lazy" />
           </a>
           <figcaption><strong>data_at_800_hours_heater_temp</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_soil_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_soil_temp.png?v=20260302" alt="Soil temperature (800 hours)" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_soil_temp.png?v=20260302" alt="data_at_800_hours_soil_temp" loading="lazy" />
           </a>
           <figcaption><strong>data_at_800_hours_soil_temp</strong></figcaption>
         </figure>
@@ -92,51 +93,52 @@
       <div class="card-body prose">
         <h3>RH sensor issue and repair (tank-scale instrumentation)</h3>
         <p>
-          As i mentioned The RH sensors showed multiple intervals where the signal deviated from its expected path. These deviations occurred at the same
-          times in both RH% and the RH temperature channels, which strongly suggests a data-acquisition/voltage input issue. With the 10-second sampling,
-          this amounted to ~3,000 bad rows (~1.2% of the dataset) identified by an algorithm that flagged common-mode departures (across all 4 RH sensors
-          sensors at the same time) relative to neighboring values.
+          The RH sensors showed multiple intervals where the signal deviated from its expected path. These deviations occurred at the
+          same times in both the RH% and RH temperature channels, which strongly suggests a data-acquisition / voltage-input issue.
+          With 10-second sampling, this amounted to ~3,000 bad rows (~1.2% of the dataset), identified by an algorithm that flagged
+          common-mode departures across all four RH sensors at the same timestamps relative to neighboring values.
         </p>
         <p>
-          I repaired the flagged segments using a python interpolation tool SciPy PCHIP with physical bounds matching the typical sensor calibration tolerance.
-          This brought the data back onto the prior trend with only mild variation. fixed_Rh_data shows the repaired data and data_at_800_hours_RH_percent_repaired
-          and data_at_800_hours_RH_temp_repaired show the full cleaned plot. I’m going to pause LabVIEW and inspect the setup and replace the powersource and see
-          if this recurs in future runs.
+          I repaired the flagged segments using SciPy PCHIP interpolation, constrained to physically reasonable bounds consistent with
+          typical sensor calibration tolerance. This brought the data back onto the prior trend with only mild variation.
+          fixed_Rh_data shows the repaired overlay, and data_at_800_hours_RH_percent_repaired and data_at_800_hours_RH_temp_repaired
+          show the full cleaned plots. I’m going to pause LabVIEW, inspect the setup, and replace the power source to see if this recurs
+          in future runs.
         </p>
       </div>
 
       <div class="gallery">
         <figure class="plot">
           <a href="assets/tank/800_hours_RH_percent_before_smoothing.png" target="_blank" rel="noopener">
-            <img src="assets/tank/800_hours_RH_percent_before_smoothing.png?v=20260302" alt="RH percent before smoothing" loading="lazy" />
+            <img src="assets/tank/800_hours_RH_percent_before_smoothing.png?v=20260302" alt="800_hours_RH_percent_before_smoothing" loading="lazy" />
           </a>
           <figcaption><strong>800_hours_RH_percent_before_smoothing</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_RH_temp_before_smoothing.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_RH_temp_before_smoothing.png?v=20260302" alt="RH temp before smoothing" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_RH_temp_before_smoothing.png?v=20260302" alt="data_at_800_hours_RH_temp_before_smoothing" loading="lazy" />
           </a>
           <figcaption><strong>data_at_800_hours_RH_temp_before_smoothing</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/fixed_Rh_data.png" target="_blank" rel="noopener">
-            <img src="assets/tank/fixed_Rh_data.png?v=20260302" alt="Fixed RH data (repaired)" loading="lazy" />
+            <img src="assets/tank/fixed_Rh_data.png?v=20260302" alt="fixed_Rh_data" loading="lazy" />
           </a>
           <figcaption><strong>fixed_Rh_data</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_RH_percent_repaired.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_RH_percent_repaired.png?v=20260302" alt="RH percent repaired" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_RH_percent_repaired.png?v=20260302" alt="data_at_800_hours_RH_percent_repaired" loading="lazy" />
           </a>
           <figcaption><strong>data_at_800_hours_RH_percent_repaired</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/data_at_800_hours_RH_temp_repaired.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_800_hours_RH_temp_repaired.png?v=20260302" alt="RH temp repaired" loading="lazy" />
+            <img src="assets/tank/data_at_800_hours_RH_temp_repaired.png?v=20260302" alt="data_at_800_hours_RH_temp_repaired" loading="lazy" />
           </a>
           <figcaption><strong>data_at_800_hours_RH_temp_repaired</strong></figcaption>
         </figure>
@@ -154,13 +156,15 @@
 
       <div class="card-body prose">
         <p>
-          RH_Test1_data shows what we already discussed. I am stilll in the process of making new samples and I will proceed as you reccomened by restarting the
-          two highest suctions salts (LiCl and K2CO3) at the 20 degree again and taking weights to monitor equilibrium. I will start the raming salts at the 40
-          interval and again monitor their weight until neglible change occurs and I can confirm equilibrium than I will pull them, take final volumetric measurements
-          and reuse them for the next remptreatur jump to 80 degrees, Sorry for my oversight on this previously.
+          RH_Test1_data shows what we already discussed. I am still in the process of making new samples, and I will proceed as you
+          recommended by restarting the two highest-suction salts (LiCl and K2CO3) at 20°C and taking periodic weights to monitor
+          equilibrium. I will then ramp the salts to the 40°C interval and again monitor mass until negligible change occurs and
+          equilibrium is confirmed. After equilibrium is confirmed, I will pull them, take final volumetric measurements, and reuse
+          them for the next temperature step to 80°C. Apologies for my oversight on this previously.
         </p>
         <p>
-          I want to ensure the RH sensors are wirking before upping the heater temp. The highest temp around and RH sensors is still around 60 degrees celcius.
+          I want to ensure the RH sensors are working before increasing the heater temperature. The highest temperature around the RH
+          sensors is currently ~60°C.
         </p>
       </div>
 
@@ -186,11 +190,11 @@
       <div class="card-body prose">
         <p><strong>Future work summary:</strong></p>
         <ul>
-          <li>Fix the RH Sensor and replot after a few days to verify if changing the power source helped.</li>
-          <li>Continue making samples and get the highest suction tubes started in the coming days.</li>
+          <li>Fix the RH sensor issue and replot after a few days to verify whether changing the power source helped.</li>
+          <li>Continue making samples and restart the highest-suction tubes in the coming days.</li>
         </ul>
         <p>
-          I will come to you with questions after/before class.
+          I will bring questions before/after class as needed.
         </p>
       </div>
     </section>
