@@ -50,22 +50,8 @@
   <div class="card-body prose">
     <h3>Update summary</h3>
     <p>
-      Plots still show previously pulled data. No updates are present in these plots due to the errors found within the RH test data, still in need of smoothing.
-    <p>
-      I switched out the GeoTac power supply that I was using for the RH sensors because Yuquan needed it.
-      I replaced it with a Dr. Meter power source, and the RH sensors are now showing much less drift.
-      There were only a couple of spikes on the newest plots shown below.
-    </p>
-    <p>
-      I plan to look into these more closely across all channels and confirm whether they remain within the
-      calibration range of the sensors; if not, I will smooth them. The jump around hour 1100 was caused by
-      switching the power source. Overall, the system appears to be stabilizing further, particularly at
-      greater distances from the heat source.
-    </p>
-    <p>
-      Saturation is still decreasing closest to the heat source, and the RH sensors nearest the heat source
-      appear more stable. I will pull and generate another set of plots next week, and then we can discuss
-      increasing the heat in the coming weeks and preparing for hydration.
+      Plots still show previously pulled data. No updates are present in these plots due to the errors found within the RH test data. I am working on smoothing now.
+      Tesing is currently at ~1600 hours. 
     </p>
   </div>
 
@@ -133,18 +119,15 @@
 
   <div class="card-body prose">
     <p>
-      I fitted the Lu (2016) model to Yu's test data initally by eye and then used the solver to refine. 
-      It appears to now follow the trend realistially, I apologize for my previous oversight.
+      I fitted the Lu (2016) model to Yu's test data initially by eye and then used a solver for refinement.
     </p>
     <p>
-      Using the parameters determined from the Lu (2016) fit, the nonisothermal SWRC now fits realistically.
-      As I get more data points from my tests I will follow the same approach using my updated soil dry density/porosity.
-      I also intend to digitize Yu's higher temperature data and fit models similarly to prepare for my data points later.
-      I will combine it all into one nice plot once all data has been collected and I will fit you nonisothermal model to each dataset.
-      
+      Using the parameters determined from the Lu (2016) fit, the nonisothermal SWRC now fits the data realistically.
+      As I obtain more data points from my tests, I will follow the same approach using my updated soil dry density and porosity.
+      I also intend to digitize Yu's higher-temperature data and fit the models similarly in preparation for analyzing my own data later.
+      I will combine everything into a single plot once all the data has been collected, and I will fit nonisothermal model (2024) to each dataset.
     </p>
   </div>
-
   <div class="gallery two-col">
     <figure class="plot">
       <a href="assets/rh/20deg_Lu_Fit.png" target="_blank" rel="noopener">
@@ -156,8 +139,8 @@
 
     <div class="gallery two-col">
     <figure class="plot">
-      <a href="assets/rh/20deg_model_fit.png" target="_blank" rel="noopener">
-        <img src="assets/rh/20deg_model_fit.png?v=20260321" alt="20 degree Lu 2016 fit" loading="lazy" />
+      <a href="assets/rh/20deg_2024_fit.png" target="_blank" rel="noopener">
+        <img src="assets/rh/20deg_2024_fit.png?v=20260321" alt="20 degree Lu 2016 fit" loading="lazy" />
       </a>
       <figcaption><strong>20°C Lu & McCartney (2024) model fit</strong></figcaption>
     </figure>
@@ -178,7 +161,7 @@
     <ul>
       <li>Digitize Yu's remaining RH data and fit to Lu (2016) intially and then Lu & McCartney (2024) using those parameters.</li>
       <li>Plot the thermal conductivity data from the Meter sensors.</li>
-      <li>Smooth remaining errors in the tank RH plots and prepare for hydration.</li>
+      <li>Fix Voltage Error and smooth false RH readings.</li>
       <li>Calibrate the LVDT on the tank for axial strain measurements.</li>
     </ul>
   </div>
