@@ -131,35 +131,20 @@
 
   <div class="card-body prose">
     <p>
-      All suction tests are ongoing. I held each specimen for an hour in the load frame to reduce rebound as mentioned in Yu's work. The two highest-suction values are being re-evaluated at room temperature,
-      while the remaining four lower-suction tests are currently in the small oven in 407 at 40°C.
+      I fitted the Lu (2016) model to Yu's test data initally by eye and then used the solver to refine. 
+      It appears to follow the trend realistially now I apologize for my previous oversight.
     </p>
-
     <p>
-      I fit the non-isothermal SWRC from your paper to Yu’s initial room-temperature data for the 1.30 Mg/m³
-      MX-80 specimen. I started with the 20°C parameter set from the higher-density MX-80 specimen in the paper,
-      updated the model for Yu’s soil properties, and then used Excel Solver to adjust the parameters. The current
-      average squared residual is about 0.02.
-    </p>
-
-    <p>
-      The fit is following the general trend reasonably well, but it still appears that the drop-off may be occurring
-      a bit too early, just below a degree of saturation of about 0.5. That may simply reflect that I do not yet have
-      enough data points, and at this stage I am only fitting one temperature.
-    </p>
-
-    <p>
-      I will keep refining the Solver settings and the parameter bounds, but if you are available, I would appreciate
-      the chance to go over the Excel sheet with you and make sure I am implementing the model correctly.
+      
     </p>
   </div>
 
   <div class="gallery two-col">
     <figure class="plot">
-      <a href="assets/rh/20deg_model_fit.png" target="_blank" rel="noopener">
-        <img src="assets/rh/20deg_model_fit.png?v=20260321" alt="20 degree model fit" loading="lazy" />
+      <a href="assets/rh/20deg_Lu_Fit.png" target="_blank" rel="noopener">
+        <img src="assets/rh/20deg_Lu_Fit.png?v=20260321" alt="20 degree Lu 2016 fit" loading="lazy" />
       </a>
-      <figcaption><strong>20°C model fit</strong> (current status)</figcaption>
+      <figcaption><strong>20°C Lu (2016) model fit</strong> (current status)</figcaption>
     </figure>
   </div>
 </section>
