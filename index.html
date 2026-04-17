@@ -27,9 +27,9 @@
       <div class="latest-update">
         <div class="badge">Latest update</div>
         <div class="update-meta">
-          <div class="update-date">2026-04-03</div>
+          <div class="update-date">2026-04-15</div>
           <div class="update-text">
-            Fixed RH SWRC & previous tank data. 
+            Added the latest cleaned ~1900-hour tank plots, along with the RH cleaning and anchored reconstruction figures.
           </div>
         </div>
       </div>
@@ -38,134 +38,185 @@
 
   <main class="container">
 
-<!-- =========================
-     TANK-SCALE TESTS
-     ========================= -->
-<section id="tank" class="card">
-  <div class="card-header">
-    <h2>Tank-scale tests</h2>
-    <p class="muted">Plots and notes for the first ~1300 hours pulled on 2026-03-21.</p>
-  </div>
+    <!-- =========================
+         TANK-SCALE TESTS
+         ========================= -->
+    <section id="tank" class="card">
+      <div class="card-header">
+        <h2>Tank-scale tests</h2>
+        <p class="muted">Plots and notes for the first ~1900 hours pulled on 2026-04-15.</p>
+      </div>
 
-  <div class="card-body prose">
-    <h3>Update summary</h3>
-    <p>
-      Plots still show previously pulled data. No updates are present in these plots due to the errors found within the RH test data. I am working on smoothing now.
-      Tesing is currently at ~1600 hours. 
-    </p>
-  </div>
+      <div class="card-body prose">
+        <h3>Update summary</h3>
+        <p>
+          The plots below show the most up-to-date tank dataset through ~1900 hours, pulled on 4/15.
+          After correcting the RH sensor voltage issue and carrying the cleaned RH data forward, I generated the latest
+          RH, heater temperature, soil temperature, and dielectric plots. The overall trends appear to be stabilizing further,
+          particularly at greater distances from the heat source, while the largest changes still remain closest to the heater.
+          I will continue checking the remaining minor spikes and smoothing only where necessary.
+        </p>
+      </div>
 
-  <div class="gallery">
-    <figure class="plot">
-      <a href="assets/tank/dielectric_sat_1300_hours.png" target="_blank" rel="noopener">
-        <img src="assets/tank/dielectric_sat_1300_hours.png?v=20260321" alt="Degree of saturation" loading="lazy" />
-      </a>
-      <figcaption><strong>Degree of saturation</strong> (~1300 hours)</figcaption>
-    </figure>
+      <div class="gallery">
+        <figure class="plot">
+          <a href="assets/tank/dielectric_sat_1900_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_sat_1900_hours.png?v=20260415" alt="Degree of saturation" loading="lazy" />
+          </a>
+          <figcaption><strong>Degree of saturation</strong> (~1900 hours)</figcaption>
+        </figure>
 
-    <figure class="plot">
-      <a href="assets/tank/dielectric_temp_1300_hours.png" target="_blank" rel="noopener">
-        <img src="assets/tank/dielectric_temp_1300_hours.png?v=20260321" alt="Dielectric temperature" loading="lazy" />
-      </a>
-      <figcaption><strong>Dielectric temperature</strong> (~1300 hours)</figcaption>
-    </figure>
+        <figure class="plot">
+          <a href="assets/tank/dielectric_temp_1900_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_temp_1900_hours.png?v=20260415" alt="Dielectric temperature" loading="lazy" />
+          </a>
+          <figcaption><strong>Dielectric temperature</strong> (~1900 hours)</figcaption>
+        </figure>
 
-    <figure class="plot">
-      <a href="assets/tank/dielectric_vol_1300_hours.png" target="_blank" rel="noopener">
-        <img src="assets/tank/dielectric_vol_1300_hours.png?v=20260321" alt="Volumetric water content" loading="lazy" />
-      </a>
-      <figcaption><strong>Volumetric water content</strong> (~1300 hours)</figcaption>
-    </figure>
+        <figure class="plot">
+          <a href="assets/tank/dielectric_vol_1900_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_vol_1900_hours.png?v=20260415" alt="Volumetric water content" loading="lazy" />
+          </a>
+          <figcaption><strong>Volumetric water content</strong> (~1900 hours)</figcaption>
+        </figure>
 
-    <figure class="plot">
-      <a href="assets/tank/data_at_1200_hours__heater_temp.png" target="_blank" rel="noopener">
-        <img src="assets/tank/data_at_1200_hours__heater_temp.png?v=20260321" alt="Heater temperature" loading="lazy" />
-      </a>
-      <figcaption><strong>Heater temperature</strong> (~1300 hours)</figcaption>
-    </figure>
+        <figure class="plot">
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_heater_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_heater_temp.png?v=20260415" alt="Heater temperature" loading="lazy" />
+          </a>
+          <figcaption><strong>Heater temperature</strong> (~1900 hours)</figcaption>
+        </figure>
 
-    <figure class="plot">
-      <a href="assets/tank/data_at_1200_hours__soil_temp.png" target="_blank" rel="noopener">
-        <img src="assets/tank/data_at_1200_hours__soil_temp.png?v=20260321" alt="Soil temperature" loading="lazy" />
-      </a>
-      <figcaption><strong>Soil temperature</strong> (~1300 hours)</figcaption>
-    </figure>
+        <figure class="plot">
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_soil_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_soil_temp.png?v=20260415" alt="Soil temperature" loading="lazy" />
+          </a>
+          <figcaption><strong>Soil temperature</strong> (~1900 hours)</figcaption>
+        </figure>
 
-    <figure class="plot">
-      <a href="assets/tank/data_at_1200_hours__RH_percent.png" target="_blank" rel="noopener">
-        <img src="assets/tank/data_at_1200_hours__RH_percent.png?v=20260321" alt="Relative humidity percent" loading="lazy" />
-      </a>
-      <figcaption><strong>RH%</strong> (~1300 hours)</figcaption>
-    </figure>
+        <figure class="plot">
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_RH_percent.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_RH_percent.png?v=20260415" alt="Relative humidity percent" loading="lazy" />
+          </a>
+          <figcaption><strong>RH%</strong> (~1900 hours)</figcaption>
+        </figure>
 
-    <figure class="plot">
-      <a href="assets/tank/data_at_1200_hours__RH_temp.png" target="_blank" rel="noopener">
-        <img src="assets/tank/data_at_1200_hours__RH_temp.png?v=20260321" alt="Relative humidity temperature" loading="lazy" />
-      </a>
-      <figcaption><strong>RH temperature</strong> (~1300 hours)</figcaption>
-    </figure>
-  </div>
-</section>
+        <figure class="plot">
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_RH_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_RH_temp.png?v=20260415" alt="Relative humidity temperature" loading="lazy" />
+          </a>
+          <figcaption><strong>RH temperature</strong> (~1900 hours)</figcaption>
+        </figure>
+      </div>
 
+      <div class="card-body prose">
+        <h3>RH cleaning and anchored reconstruction</h3>
+        <p>
+          Seen in the first raw-versus-cleaned plots, the initial correction used a rolling-median-based reconstruction to remove
+          the strongest artifacts caused by the unstable power supply and recover the overall trend of the damaged RH and temperature
+          signals.
+        </p>
+        <p>
+          In the following anchored plots, that first-pass result was refined by visually selecting representative anchor windows
+          from the cleaned record and tying them to the later voltage-regulated data, allowing smooth interpolation across the
+          corrupted interval.
+        </p>
+        <p>
+          The tail end of the plots, over the last ~50 hours, shows the new voltage-regulated data with minimal noise, indicating
+          that only minor smoothing should be necessary in the future now that the power source is no longer corrupted.
+        </p>
+      </div>
 
-<!-- =========================
-     RELATIVE HUMIDITY TESTS (SEPARATE TEST)
-     ========================= -->
-<section id="rh" class="card">
-  <div class="card-header">
-    <h2>Relative humidity tests</h2>
-    <p class="muted">20°C data and next steps.</p>
-  </div>
+      <div class="gallery">
+        <figure class="plot">
+          <a href="assets/tank/cleaned_RH_percent_comparison_1800hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/cleaned_RH_percent_comparison_1800hours.png?v=20260415" alt="RH percent raw versus cleaned comparison" loading="lazy" />
+          </a>
+          <figcaption><strong>RH%</strong> raw vs. cleaned comparison</figcaption>
+        </figure>
 
-  <div class="card-body prose">
-    <p>
-      I fitted the Lu (2016) model to Yu's test data initially by eye and then used a solver for refinement.
-    </p>
-    <p>
-      Using the parameters determined from the Lu (2016) fit, the nonisothermal SWRC now fits the data realistically.
-      As I obtain more data points from my tests, I will follow the same approach using my updated soil dry density and porosity.
-      I also intend to digitize Yu's higher-temperature data and fit the models similarly in preparation for analyzing my own data later.
-      I will combine everything into a single plot once all the data has been collected, and I will fit nonisothermal model (2024) to each dataset.
-    </p>
-  </div>
-  <div class="gallery two-col">
-    <figure class="plot">
-      <a href="assets/rh/20deg_Lu_Fit.png" target="_blank" rel="noopener">
-        <img src="assets/rh/20deg_Lu_Fit.png?v=20260321" alt="20 degree Lu 2016 fit" loading="lazy" />
-      </a>
-      <figcaption><strong>20°C Lu (2016) model fit</strong></figcaption>
-    </figure>
-  </div>
+        <figure class="plot">
+          <a href="assets/tank/cleaned_RH_temp_comparison_1800hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/cleaned_RH_temp_comparison_1800hours.png?v=20260415" alt="RH temperature raw versus cleaned comparison" loading="lazy" />
+          </a>
+          <figcaption><strong>RH temperature</strong> raw vs. cleaned comparison</figcaption>
+        </figure>
 
-    <div class="gallery two-col">
-    <figure class="plot">
-      <a href="assets/rh/20deg_2024_fit.png" target="_blank" rel="noopener">
-        <img src="assets/rh/20deg_2024_fit.png?v=20260321" alt="20 degree Lu 2016 fit" loading="lazy" />
-      </a>
-      <figcaption><strong>20°C Lu & McCartney (2024) model fit</strong></figcaption>
-    </figure>
-  </div>
-</section>
+        <figure class="plot">
+          <a href="assets/tank/anchored_RH_percent_1900hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/anchored_RH_percent_1900hours.png?v=20260415" alt="Anchored RH percent reconstruction" loading="lazy" />
+          </a>
+          <figcaption><strong>RH%</strong> anchored reconstruction</figcaption>
+        </figure>
 
-<!-- =========================
-     FUTURE WORK
-     ========================= -->
-<section id="future-work" class="card">
-  <div class="card-header">
-    <h2>Future work</h2>
-    <p class="muted">Running list of next steps.</p>
-  </div>
+        <figure class="plot">
+          <a href="assets/tank/anchored_RH_temp_1900hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/anchored_RH_temp_1900hours.png?v=20260415" alt="Anchored RH temperature reconstruction" loading="lazy" />
+          </a>
+          <figcaption><strong>RH temperature</strong> anchored reconstruction</figcaption>
+        </figure>
+      </div>
+    </section>
 
-  <div class="card-body prose">
-    <p><strong>Future work summary:</strong></p>
-    <ul>
-      <li>Digitize Yu's remaining RH data and fit to Lu (2016) intially and then Lu & McCartney (2024) using those parameters.</li>
-      <li>Plot the thermal conductivity data from the Meter sensors.</li>
-      <li>Fix Voltage Error and smooth false RH readings.</li>
-      <li>Calibrate the LVDT on the tank for axial strain measurements.</li>
-    </ul>
-  </div>
-</section>
+    <!-- =========================
+         RELATIVE HUMIDITY TESTS (SEPARATE TEST)
+         ========================= -->
+    <section id="rh" class="card">
+      <div class="card-header">
+        <h2>Relative humidity tests</h2>
+        <p class="muted">20°C data and next steps.</p>
+      </div>
+
+      <div class="card-body prose">
+        <p>
+          I fitted the Lu (2016) model to Yu's test data initially by eye and then used a solver for refinement.
+        </p>
+        <p>
+          Using the parameters determined from the Lu (2016) fit, the nonisothermal SWRC now fits the data realistically.
+          As I obtain more data points from my tests, I will follow the same approach using my updated soil dry density and porosity.
+          I also intend to digitize Yu's higher-temperature data and fit the models similarly in preparation for analyzing my own data later.
+          I will combine everything into a single plot once all the data has been collected, and I will fit the nonisothermal model (2024) to each dataset.
+        </p>
+      </div>
+
+      <div class="gallery two-col">
+        <figure class="plot">
+          <a href="assets/rh/20deg_Lu_Fit.png" target="_blank" rel="noopener">
+            <img src="assets/rh/20deg_Lu_Fit.png?v=20260321" alt="20 degree Lu 2016 fit" loading="lazy" />
+          </a>
+          <figcaption><strong>20°C Lu (2016) model fit</strong></figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery two-col">
+        <figure class="plot">
+          <a href="assets/rh/20deg_2024_fit.png" target="_blank" rel="noopener">
+            <img src="assets/rh/20deg_2024_fit.png?v=20260321" alt="20 degree Lu and McCartney 2024 fit" loading="lazy" />
+          </a>
+          <figcaption><strong>20°C Lu &amp; McCartney (2024) model fit</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =========================
+         FUTURE WORK
+         ========================= -->
+    <section id="future-work" class="card">
+      <div class="card-header">
+        <h2>Future work</h2>
+        <p class="muted">Running list of next steps.</p>
+      </div>
+
+      <div class="card-body prose">
+        <p><strong>Future work summary:</strong></p>
+        <ul>
+          <li>Digitize Yu’s remaining RH data and fit it first to Lu (2016), then to Lu &amp; McCartney (2024) using those parameters as the starting point.</li>
+          <li>Plot the thermal conductivity data from the Meter sensors.</li>
+          <li>Continue checking and smoothing any remaining false RH readings where needed.</li>
+          <li>Calibrate the LVDT on the tank for axial strain measurements.</li>
+        </ul>
+      </div>
+    </section>
 
     <footer class="footer">
       <div class="muted">Click any plot to open full resolution in a new tab.</div>
