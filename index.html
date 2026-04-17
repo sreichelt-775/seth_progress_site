@@ -52,9 +52,18 @@
         <p>
           The plots below show the most up-to-date tank dataset through ~1900 hours, pulled on 4/15.
           After correcting the RH sensor voltage issue and carrying the cleaned RH data forward, I generated the latest
-          RH, heater temperature, soil temperature, and dielectric plots. The overall trends appear to be stabilizing further,
-          particularly at greater distances from the heat source, while the largest changes still remain closest to the heater.
-          I will continue checking the remaining minor spikes and smoothing only where necessary.
+          RH, heater temperature, soil temperature, and dielectric plots. The RH sensors appear to be stabilizing; however,
+          there are still noticeable changes in the volumetric water content and saturation closest to the heater.
+        </p>
+        <p>
+          The temperature data from the dielectric sensors show some recent increases and fluctuations across all five locations; however,
+          they are all changing together. This may reflect variability coming from the data-acquisition software itself. The temperature
+          accuracy of these sensors should be within ±0.3°C. Additionally, the temperature recorded at the dielectric sensors
+          located 50 mm from the heaters is reading roughly 8°C higher than that at the RH sensor located at the same radial distance.
+          Given the issues you have had in the past with RH sensors at higher temperatures, I trust the dielectric reading more.
+          This differential could also be related to the fact that the dielectric probes are installed in both granular
+          and pelletized material at different densities, due to their sharp, thin probes being inserted vertically rather than laid
+          horizontally as the RH sensors were.
         </p>
       </div>
 
@@ -81,29 +90,29 @@
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_heater_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_heater_temp.png?v=20260415" alt="Heater temperature" loading="lazy" />
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned__heater_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned__heater_temp.png?v=20260415" alt="Heater temperature" loading="lazy" />
           </a>
           <figcaption><strong>Heater temperature</strong> (~1900 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_soil_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_soil_temp.png?v=20260415" alt="Soil temperature" loading="lazy" />
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned__soil_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned__soil_temp.png?v=20260415" alt="Soil temperature" loading="lazy" />
           </a>
           <figcaption><strong>Soil temperature</strong> (~1900 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_RH_percent.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_RH_percent.png?v=20260415" alt="Relative humidity percent" loading="lazy" />
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned__RH_percent.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned__RH_percent.png?v=20260415" alt="Relative humidity percent" loading="lazy" />
           </a>
           <figcaption><strong>RH%</strong> (~1900 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_1900_hours_Final_Cleaned_RH_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_1900_hours_Final_Cleaned_RH_temp.png?v=20260415" alt="Relative humidity temperature" loading="lazy" />
+          <a href="assets/tank/data_at_1900_hours_Final_Cleaned__RH_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_1900_hours_Final_Cleaned__RH_temp.png?v=20260415" alt="Relative humidity temperature" loading="lazy" />
           </a>
           <figcaption><strong>RH temperature</strong> (~1900 hours)</figcaption>
         </figure>
@@ -112,14 +121,18 @@
       <div class="card-body prose">
         <h3>RH cleaning and anchored reconstruction</h3>
         <p>
-          Seen in the first raw-versus-cleaned plots, the initial correction used a rolling-median-based reconstruction to remove
-          the strongest artifacts caused by the unstable power supply and recover the overall trend of the damaged RH and temperature
-          signals.
+          Seen in the first raw-versus-cleaned plots, the initial correction used a rolling-median-based reconstruction with
+          provided upper and lower bounds to remove the unrealistic spikes caused by the unstable power supply. This recovered
+          the overall trend of the RH and temperature data prior to the voltage failure and successfully removed the large spikes
+          we discussed previously by email.
         </p>
         <p>
           In the following anchored plots, that first-pass result was refined by visually selecting representative anchor windows
-          from the cleaned record and tying them to the later voltage-regulated data, allowing smooth interpolation across the
-          corrupted interval.
+          from the cleaned record and tying them to the later voltage-regulated data obtained after fixing the power supply. This
+          allowed smooth interpolation across the smaller spikes and provided a final overall polish that is now tied to the ongoing
+          dataset rather than to the median of the corrupted output voltage. Moving forward, the earlier data will now be tied to
+          the correct trend measured by the RH sensors. I saved the cleaned data separately, and it will be used when stacking future
+          data pulls.
         </p>
         <p>
           The tail end of the plots, over the last ~50 hours, shows the new voltage-regulated data with minimal noise, indicating
@@ -164,7 +177,7 @@
     <section id="rh" class="card">
       <div class="card-header">
         <h2>Relative humidity tests</h2>
-        <p class="muted">20°C data and next steps.</p>
+        <p class="muted">No changes made here. 20°C data and next steps.</p>
       </div>
 
       <div class="card-body prose">
@@ -172,10 +185,10 @@
           I fitted the Lu (2016) model to Yu's test data initially by eye and then used a solver for refinement.
         </p>
         <p>
-          Using the parameters determined from the Lu (2016) fit, the nonisothermal SWRC now fits the data realistically.
+          Using the parameters determined from the Lu (2016) fit, the non-isothermal SWRC now fits the data realistically.
           As I obtain more data points from my tests, I will follow the same approach using my updated soil dry density and porosity.
           I also intend to digitize Yu's higher-temperature data and fit the models similarly in preparation for analyzing my own data later.
-          I will combine everything into a single plot once all the data has been collected, and I will fit the nonisothermal model (2024) to each dataset.
+          I will combine everything into a single plot once all the data has been collected, and I will fit the non-isothermal model (2024) to each dataset.
         </p>
       </div>
 
@@ -212,7 +225,7 @@
         <ul>
           <li>Digitize Yu’s remaining RH data and fit it first to Lu (2016), then to Lu &amp; McCartney (2024) using those parameters as the starting point.</li>
           <li>Plot the thermal conductivity data from the Meter sensors.</li>
-          <li>Continue checking and smoothing any remaining false RH readings where needed.</li>
+          <li>Prepare the Digiflow pressure pumps for use.</li>
           <li>Calibrate the LVDT on the tank for axial strain measurements.</li>
         </ul>
       </div>
