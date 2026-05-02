@@ -29,7 +29,7 @@
         <div class="update-meta">
           <div class="update-date">2026-04-15</div>
           <div class="update-text">
-            Added the latest cleaned ~1900-hour tank plots, along with the RH cleaning and anchored reconstruction figures.
+            Added the latest cleaned ~2300-hour tank plots, and began set up of the pumps.
           </div>
         </div>
       </div>
@@ -50,20 +50,9 @@
       <div class="card-body prose">
         <h3>Update summary</h3>
         <p>
-          The plots below show the most up-to-date tank dataset through ~1900 hours, pulled on 4/15.
-          After correcting the RH sensor voltage issue and carrying the cleaned RH data forward, I generated the latest
-          RH, heater temperature, soil temperature, and dielectric plots. The RH sensors appear to be stabilizing; however,
-          there are still noticeable changes in the volumetric water content and saturation closest to the heater.
-        </p>
-        <p>
-          The temperature data from the dielectric sensors show some recent increases and fluctuations across all five locations; however,
-          they are all changing together. This may reflect variability coming from the data-acquisition software itself. The temperature
-          accuracy of these sensors should be within ±0.3°C. Additionally, the temperature recorded at the dielectric sensors
-          located 50 mm from the heaters is reading roughly 8°C higher than that at the RH sensor located at the same radial distance.
-          Given the issues you have had in the past with RH sensors at higher temperatures, I trust the dielectric reading more.
-          This differential could also be related to the fact that the dielectric probes are installed in both granular
-          and pelletized material at different densities, due to their sharp, thin probes being inserted vertically rather than laid
-          horizontally as the RH sensors were.
+          The plots below show the most up-to-date tank dataset through ~2300 hours, pulled on 4/29.
+          The stable RH data seen after ~1900 shows the raw, uncorrected data.
+          So, the voltage regulator I added appears to be working very well.
         </p>
       </div>
 
@@ -118,58 +107,6 @@
         </figure>
       </div>
 
-      <div class="card-body prose">
-        <h3>RH cleaning and anchored reconstruction</h3>
-        <p>
-          Seen in the first raw-versus-cleaned plots, the initial correction used a rolling-median-based reconstruction with
-          provided upper and lower bounds to remove the unrealistic spikes caused by the unstable power supply. This recovered
-          the overall trend of the RH and temperature data prior to the voltage failure and successfully removed the large spikes
-          we discussed previously by email.
-        </p>
-        <p>
-          In the following anchored plots, that first-pass result was refined by visually selecting representative anchor windows
-          from the cleaned record and tying them to the later voltage-regulated data obtained after fixing the power supply. This
-          allowed smooth interpolation across the smaller spikes and provided a final overall polish that is now tied to the ongoing
-          dataset rather than to the median of the corrupted output voltage. Moving forward, the earlier data will now be tied to
-          the correct trend measured by the RH sensors. I saved the cleaned data separately, and it will be used when stacking future
-          data pulls.
-        </p>
-        <p>
-          The tail end of the plots, over the last ~50 hours, shows the new voltage-regulated data with minimal noise, indicating
-          that only minor smoothing should be necessary in the future now that the power source is no longer corrupted.
-        </p>
-      </div>
-
-      <div class="gallery">
-        <figure class="plot">
-          <a href="assets/tank/cleaned_RH_percent_comparison_1800hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/cleaned_RH_percent_comparison_1800hours.png?v=20260415" alt="RH percent raw versus cleaned comparison" loading="lazy" />
-          </a>
-          <figcaption><strong>RH%</strong> raw vs. cleaned comparison</figcaption>
-        </figure>
-
-        <figure class="plot">
-          <a href="assets/tank/cleaned_RH_temp_comparison_1800hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/cleaned_RH_temp_comparison_1800hours.png?v=20260415" alt="RH temperature raw versus cleaned comparison" loading="lazy" />
-          </a>
-          <figcaption><strong>RH temperature</strong> raw vs. cleaned comparison</figcaption>
-        </figure>
-
-        <figure class="plot">
-          <a href="assets/tank/anchored_RH_percent_1900hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/anchored_RH_percent_1900hours.png?v=20260415" alt="Anchored RH percent reconstruction" loading="lazy" />
-          </a>
-          <figcaption><strong>RH%</strong> anchored reconstruction</figcaption>
-        </figure>
-
-        <figure class="plot">
-          <a href="assets/tank/anchored_RH_temp_1900hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/anchored_RH_temp_1900hours.png?v=20260415" alt="Anchored RH temperature reconstruction" loading="lazy" />
-          </a>
-          <figcaption><strong>RH temperature</strong> anchored reconstruction</figcaption>
-        </figure>
-      </div>
-    </section>
 
     <!-- =========================
          RELATIVE HUMIDITY TESTS (SEPARATE TEST)
@@ -177,29 +114,33 @@
     <section id="rh" class="card">
       <div class="card-header">
         <h2>Relative humidity tests</h2>
-        <p class="muted">No changes made here. 20°C data and next steps.</p>
+        <p class="muted">Next Steps for RH</p>
       </div>
 
       <div class="card-body prose">
         <p>
-          I fitted the Lu (2016) model to Yu's test data initially by eye and then used a solver for refinement.
+          Yu provided data for only two salts that already have an assocaited plot in the manuscript. The salt I am in need of is K2SO4, all of the others are available
+          as plots in the manuscript which I can digitize. I will reach out to Yu directly for this data, it is the lowest suction value salt, however, I did not use 
+          it in any of my ongoing tests in case it happenedto be lost. I will omit it from the manuscript and chart seen below if the data can not be found. For now I will fill 
+          in the table with the data Yu provided and that which I can digitize.
         </p>
         <p>
-          Using the parameters determined from the Lu (2016) fit, the non-isothermal SWRC now fits the data realistically.
-          As I obtain more data points from my tests, I will follow the same approach using my updated soil dry density and porosity.
-          I also intend to digitize Yu's higher-temperature data and fit the models similarly in preparation for analyzing my own data later.
-          I will combine everything into a single plot once all the data has been collected, and I will fit the non-isothermal model (2024) to each dataset.
+          I took check weights of the tests running at 40°C. The reruns of the high suction material exceeded equilibration time of 
+          6 weeks during the previous failed run, so these I will wait until 7 or8 weeks prior to check weight to allow ample time.
+          I anticipate the equilibration of the lower suction test to be complete within the next 2 weeks. I will then push it up to 80°C, and lastly 120°C, 
+          data should be fully completed within the next 3 months.
         </p>
       </div>
-
+      
       <div class="gallery two-col">
         <figure class="plot">
-          <a href="assets/rh/20deg_Lu_Fit.png" target="_blank" rel="noopener">
-            <img src="assets/rh/20deg_Lu_Fit.png?v=20260321" alt="20 degree Lu 2016 fit" loading="lazy" />
+          <a href="assets/rh/empty_chart.png" target="_blank" rel="noopener">
+            <img src="assets/rh/empty_chart.png?v=20260321" alt="Blank Salt Suction Chart - Manuscript" loading="lazy" />
           </a>
-          <figcaption><strong>20°C Lu (2016) model fit</strong></figcaption>
+          <figcaption><strong>20°C Lu &amp; McCartney (2024) model fit</strong></figcaption>
         </figure>
       </div>
+    </section>
 
       <div class="gallery two-col">
         <figure class="plot">
@@ -210,6 +151,8 @@
         </figure>
       </div>
     </section>
+
+    
 
     <!-- =========================
          FUTURE WORK
@@ -223,10 +166,13 @@
       <div class="card-body prose">
         <p><strong>Future work summary:</strong></p>
         <ul>
-          <li>Digitize Yu’s remaining RH data and fit it first to Lu (2016), then to Lu &amp; McCartney (2024) using those parameters as the starting point.</li>
+          <li>Prepare the Digiflow pressure pump's plumbing and troubleshoot software issues.</li>
+          <li>Work through load cell reading errors and brainstorm a method for accurate measurements moving foward.
+          <li>Calibrate the LVDT on the tank for axial strain measurements.</li>   
           <li>Plot the thermal conductivity data from the Meter sensors.</li>
-          <li>Prepare the Digiflow pressure pumps for use.</li>
-          <li>Calibrate the LVDT on the tank for axial strain measurements.</li>
+          <li>Digitize Yu’s remaining RH data and fit it first to Lu (2016), then to Lu &amp; McCartney (2024) using those parameters as the starting point.</li>
+
+
         </ul>
       </div>
     </section>
