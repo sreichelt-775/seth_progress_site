@@ -27,9 +27,9 @@
       <div class="latest-update">
         <div class="badge">Latest update</div>
         <div class="update-meta">
-          <div class="update-date">2026-04-29</div>
+          <div class="update-date">2026-06-07</div>
           <div class="update-text">
-            Added the latest cleaned ~2300-hour tank plots, began set up of the pumps, and took check weights of RH tests.
+            Added the latest cleaned ~3200-hour tank plots, calibrated and fixed the LVDT data, and moved all RH tests to the next temperature.
           </div>
         </div>
       </div>
@@ -44,69 +44,130 @@
     <section id="tank" class="card">
       <div class="card-header">
         <h2>Tank-scale tests</h2>
-        <p class="muted">Plots and notes for the first ~2300 hours pulled on 2026-04-29.</p>
+        <p class="muted">Plots and notes for the first ~3200 hours pulled on 2026-06-06.</p>
       </div>
 
       <div class="card-body prose">
         <h3>Update summary</h3>
         <p>
-          The plots below show the most up-to-date tank dataset through ~2300 hours, pulled on 4/29.
-          The stable RH data observed after ~1900 reflects the raw, uncorrected measurements.
-          Therefore, the voltage regulator I added appears to be working very well.
+          The plots below show the most up-to-date tank dataset through ~3200 hours, pulled on 6/06.
+          The volumetric water content is still showing a steady decline at the 50 mm from-heater location.
+          I think it could be a good time to increase the heater temperature by swapping the thermocouples.
+          This would allow me to begin hydration after we see further steady trends in the moisture distribution.
+          Ideally, I would like to start hydration this summer, when I can monitor the pumps throughout the day without interruption.
+        </p>
+        <p>
+          There is a large drop in the thermocouple reading placed at the bottom of the tank, as seen in the temperature plot around 2950 hours.
+          This is clearly an acquisition error, and I am hoping it corrects itself. For now, I am planning to add a step function to remove this
+          vertical spike. All of the external wiring is intact, so if this error is physical due to thermal or mechanical stress on the thermocouple
+          inside the tank, I will leave the step function in place for the remainder of the test.
         </p>
       </div>
 
       <div class="gallery">
         <figure class="plot">
-          <a href="assets/tank/dielectric_sat_2300_hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dielectric_sat_2300_hours.png?v=20260415" alt="Degree of saturation" loading="lazy" />
+          <a href="assets/tank/dielectric_sat_3200_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_sat_3200_hours.png?v=20260415" alt="Degree of saturation" loading="lazy" />
           </a>
-          <figcaption><strong>Degree of saturation</strong> (~2300 hours)</figcaption>
+          <figcaption><strong>Degree of saturation</strong> (~3200 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/dielectric_temp_2300_hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dielectric_temp_2300_hours.png?v=20260415" alt="Dielectric temperature" loading="lazy" />
+          <a href="assets/tank/dielectric_temp_3200_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_temp_3200_hours.png?v=20260415" alt="Dielectric temperature" loading="lazy" />
           </a>
-          <figcaption><strong>Dielectric temperature</strong> (~2300 hours)</figcaption>
+          <figcaption><strong>Dielectric temperature</strong> (~3200 hours)</figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/dielectric_vol_2300_hours.png" target="_blank" rel="noopener">
             <img src="assets/tank/dielectric_vol_2300_hours.png?v=20260415" alt="Volumetric water content" loading="lazy" />
           </a>
-          <figcaption><strong>Volumetric water content</strong> (~2300 hours)</figcaption>
+          <figcaption><strong>Volumetric water content</strong> (~3200 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_2300_hours_Final_Cleaned__heater_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_2300_hours_Final_Cleaned__heater_temp.png?v=20260415" alt="Heater temperature" loading="lazy" />
+          <a href="assets/tank/data_at_3200_hours_Final_Cleaned_heater_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_3200_hours_Final_Cleaned_heater_temp.png?v=20260415" alt="Heater temperature" loading="lazy" />
           </a>
-          <figcaption><strong>Heater temperature</strong> (~2300 hours)</figcaption>
+          <figcaption><strong>Heater temperature</strong> (~3200 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_2300_hours_Final_Cleaned__soil_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_2300_hours_Final_Cleaned__soil_temp.png?v=20260415" alt="Soil temperature" loading="lazy" />
+          <a href="assets/tank/data_at_3200_hours_Final_Cleaned_soil_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_3200_hours_Final_Cleaned_soil_temp.png?v=20260415" alt="Soil temperature" loading="lazy" />
           </a>
-          <figcaption><strong>Soil temperature</strong> (~2300 hours)</figcaption>
+          <figcaption><strong>Soil temperature</strong> (~3200 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_2300_hours_Final_Cleaned__RH_percent.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_2300_hours_Final_Cleaned__RH_percent.png?v=20260415" alt="Relative humidity percent" loading="lazy" />
+          <a href="assets/tank/data_at_3200_hours_Final_Cleaned_RH_percent.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_3200_hours_Final_Cleaned_RH_percent.png?v=20260415" alt="Relative humidity percent" loading="lazy" />
           </a>
-          <figcaption><strong>RH%</strong> (~2300 hours)</figcaption>
+          <figcaption><strong>RH%</strong> (~3200 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_2300_hours_Final_Cleaned__RH_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_2300_hours_Final_Cleaned__RH_temp.png?v=20260415" alt="Relative humidity temperature" loading="lazy" />
+          <a href="assets/tank/data_at_3200_hours_Final_Cleaned_RH_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_3200_hours_Final_Cleaned_RH_temp.png?v=20260415" alt="Relative humidity temperature" loading="lazy" />
           </a>
-          <figcaption><strong>RH temperature</strong> (~2300 hours)</figcaption>
+          <figcaption><strong>RH temperature</strong> (~3200 hours)</figcaption>
         </figure>
       </div>
 
+          <!-- =========================
+         VERTICAL STRAIN / LVDT
+         ========================= -->
+    <section id="vertical-strain" class="card">
+      <div class="card-header">
+        <h2>Vertical strain / LVDT correction</h2>
+        <p class="muted">Manual voltage-to-displacement correction, stacked data, and filtered vertical strain plots.</p>
+      </div>
+
+      <div class="card-body prose">
+        <h3>Update summary</h3>
+        <p>
+          The plots below show the vertical strain processing after revisiting the earlier LVDT data and manually correcting
+          the voltage-to-displacement conversion using two different zero values for the two time periods in which the LVDT
+          position had changed.
+        </p>
+        <p>
+          The original corrected data still contained many obvious spikes and abrupt jumps that did not appear physically
+          realistic, so I applied filtering, smoothing, and a de-stepping correction to remove the strongest voltage- and
+          noise-related artifacts before stacking it with the newer cleaned data pulls. The newer data should remain more
+          consistent moving forward because I will no longer be moving the LVDT.
+        </p>
+        <p>
+          Even though Yu’s vertical strain plot was smoother during this same initial heating portion, the strain changes in
+          my data are still generally under about 0.2%, which is negligible relative to the 207.5 mm layer height. Any
+          remaining roughness should be minor once plotted at full scale and compared with the larger changes expected later
+          during hydration.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <figure class="plot">
+          <a href="assets/tank/data_at_2430_hours_Final_Cleaned__raw_stack_window_LVDT_displacement_2400_filtered.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_2430_hours_Final_Cleaned__raw_stack_window_LVDT_displacement_2400_filtered.png?v=20260607" alt="Pre-calibration corrected LVDT displacement" loading="lazy" />
+          </a>
+          <figcaption><strong>Pre-calibration corrected LVDT displacement</strong> (~2430 hours)</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/tank/data_at_3200_hours_Final_Cleaned__vertical_strain_raw.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_3200_hours_Final_Cleaned__vertical_strain_raw.png?v=20260607" alt="Stacked raw vertical strain" loading="lazy" />
+          </a>
+          <figcaption><strong>Vertical strain</strong> stacked raw plot (~3200 hours)</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/tank/data_at_3200_hours_Final_Cleaned_vertical_strain_filtered.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_3200_hours_Final_Cleaned_vertical_strain_filtered.png?v=20260607" alt="Filtered vertical strain" loading="lazy" />
+          </a>
+          <figcaption><strong>Vertical strain</strong> filtered plot (~3200 hours)</figcaption>
+        </figure>
+      </div>
+    </section>
 
     <!-- =========================
          RELATIVE HUMIDITY TESTS (SEPARATE TEST)
