@@ -178,40 +178,82 @@
         <p class="muted">Next Steps for RH</p>
       </div>
 
+    <!-- =========================
+         RELATIVE HUMIDITY TESTS
+         ========================= -->
+    <section id="rh" class="card">
+      <div class="card-header">
+        <h2>Relative humidity tests</h2>
+        <p class="muted">Digitized suction values, updated 20°C/40°C data, and next steps.</p>
+      </div>
+
       <div class="card-body prose">
         <p>
-          Yu provided data for only two salts that already have an associated plot in the manuscript. The salt I need is K2SO4; all of the others are available as plots in the manuscript, 
-          which I can digitize. I will reach out to Yu directly for this data. It is the lowest-suction-value salt; however, I did not use it in any of my ongoing tests in case it 
-          happened to be lost. I will omit it from the manuscript and the chart seen below if the data cannot be found. For now, I will fill in the table with the data Yu provided and 
-          that which I can digitize.
+          The values shown in this suction table were obtained by digitizing the relative humidity values from the salt calibration plots,
+          as shown in the Excel sheet I provided. Several of the calculated suctions do not agree with the reference values from Tang and
+          Cui (2005) and Wan et al. (2015) that were listed in the manuscript. Some salts are reasonably close over certain temperature
+          ranges, particularly NaCl and portions of the KCl data, but others are very far off. The K₂CO₃ values are especially far from
+          the published reference values, and the NaBr and LiCl values also appear questionable in some temperature ranges.
         </p>
+
         <p>
-          I took check weights of the tests running at 40°C. The reruns of the high-suction material exceeded an equilibration time of 6 weeks during the previous failed run, 
-          so I will wait until 7 or 8 weeks before taking a check weight to allow ample time. I anticipate the equilibration of the lower-suction test to be complete within the next 2 weeks. 
-          I will then increase the temperature to 80°C, and lastly to 120°C; the data should be fully completed within the next 3 months.
+          For each temperature step, I selected an RH value from the portion of the curve that appeared closest to equilibrium, generally
+          near the end of the temperature hold and before the next transition. However, some plots did not show a clearly flat RH plateau,
+          especially at higher temperatures, so I selected the last RH value at that temperature, assuming Yu was correct about equilibrium.
+          Additionally, the NaBr and K₂CO₃ plots do not provide usable 120°C values because the data appear to cut off shortly after reaching
+          approximately 100°C. Since future testing is planned up to 120°C, reliable suction values for at least NaBr and K₂CO₃ at 120°C
+          will need to be completed, as the previous testing did not extend to that range for these salts.
+        </p>
+
+        <p>
+          The bad values could have come from incomplete equilibration during the temperature holds or full dissolution of the salts used.
+          I feel it is most likely related to degradation or calibration issues with the RH sensors after exposure to higher temperatures,
+          especially if the sensors were later reused. Moving forward, I am going to check the calibration on the RH sensors he used to rule
+          that issue out. I will also reach out to Yu to see if he has any more of the raw datasets, since what he provided was not related
+          to the salt-suction testing. I will also ask him some questions about the experimental procedure for these tests to clarify any
+          confusion I have and see if he remembers any issue that may have occurred.
+        </p>
+
+        <p>
+          On another note, the 40°C tests have been completed at the lower suction values, and the two higher-suction tests provided good
+          results at 20°C. I have included plots below showing the new 20°C tests compared with Yu's values, as well as the 20°C data paired
+          with my 40°C data. All specimens are now being run at 80°C. I had some issues keeping the oven at the correct temperature, but I
+          have fixed that. I will take check weights in approximately two weeks. After this, I will increase them to 100°C and then 120°C.
+          I can also run the two higher suctions at 40°C and run all of them at 60°C if you deem that necessary.
         </p>
       </div>
-      
-      <div class="gallery two-col">
-        <figure class="plot">
-          <a href="assets/rh/empty_chart.png" target="_blank" rel="noopener">
-            <img src="assets/rh/empty_chart.png?v=20260321" alt="Blank Salt Suction Chart - Manuscript" loading="lazy" />
-          </a>
-          <figcaption><strong>20°C Lu &amp; McCartney (2024) model fit</strong></figcaption>
-        </figure>
-      </div>
-    </section>
 
       <div class="gallery two-col">
         <figure class="plot">
-          <a href="assets/rh/20deg_2024_fit.png" target="_blank" rel="noopener">
-            <img src="assets/rh/20deg_2024_fit.png?v=20260321" alt="20 degree Lu and McCartney 2024 fit" loading="lazy" />
+          <a href="assets/rh/digitized_suctions.png" target="_blank" rel="noopener">
+            <img src="assets/rh/digitized_suctions.png" alt="Digitized suction values compared with reference data" loading="lazy" />
           </a>
-          <figcaption><strong>20°C Lu &amp; McCartney (2024) model fit</strong></figcaption>
+          <figcaption><strong>Digitized suction values</strong> compared with Tang and Cui (2005) and Wan et al. (2015)</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/rh/Rh_20_40_degree_sat.png" target="_blank" rel="noopener">
+            <img src="assets/rh/Rh_20_40_degree_sat.png" alt="Updated 20 and 40 degree saturation data" loading="lazy" />
+          </a>
+          <figcaption><strong>Updated 20°C and 40°C data</strong> from 1.41 Mg/m³ samples</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/rh/failed_RH_test_data.png" target="_blank" rel="noopener">
+            <img src="assets/rh/failed_RH_test_data.png" alt="Failed high-suction RH test data" loading="lazy" />
+          </a>
+          <figcaption><strong>Failed 20°C high-suction values</strong> shown for reference</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/rh/Rh_data_20deg_new.png" target="_blank" rel="noopener">
+            <img src="assets/rh/Rh_data_20deg_new.png" alt="New fully equilibrated 20 degree RH data compared with Yu's values" loading="lazy" />
+          </a>
+          <figcaption><strong>New fully equilibrated 20°C values</strong> compared with Yu's values</figcaption>
         </figure>
       </div>
     </section>
-
+    
     
 
     <!-- =========================
