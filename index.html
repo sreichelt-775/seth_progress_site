@@ -28,9 +28,9 @@
       <div class="latest-update">
         <div class="badge">Latest update</div>
         <div class="update-meta">
-          <div class="update-date">2026-07-08</div>
+          <div class="update-date">2026-08-20</div>
           <div class="update-text">
-            Added the latest cleaned ~3970-hour tank plots following the heater increase, with updated dielectric, temperature, RH, and vertical strain plots.
+            Added the latest cleaned ~4995-hour tank plots, apparent equilibrium check notes, RH spike-cleaning plots, and updated relative humidity progress.
           </div>
         </div>
       </div>
@@ -45,75 +45,78 @@
     <section id="tank" class="card">
       <div class="card-header">
         <h2>Tank-scale tests</h2>
-        <p class="muted">Plots and notes for the ongoing heating phase showing the first ~3970 hours.</p>
+        <p class="muted">Plots and notes for the ongoing heating phase showing the first ~4995 hours pulled on 2026-08-20.</p>
       </div>
 
       <div class="card-body prose">
         <h3>Update summary</h3>
         <p>
-          The data now show approximately 200 additional hours after the previous update, bringing the tank dataset to ~3970 hours.
-          I changed the dielectric sensor data from logarithmic to linear to better show the recent changes over the past few weeks.
-          I also began using Python to process the dielectric sensor data because the Excel notebook continued to crash as the file grew
-          well beyond 600,000 rows. I have a cleaned, smaller Excel-format file saved that can be shared later if needed. The new dielectric
-          plots were made to match the rest of the tank plots.
+          The data are now up to date as of 8/20/2026, with the tank dataset extended to ~4995 hours.
+          I will be in town until Sunday morning and can give everything a final check before leaving.
+          After running an apparent equilibrium check based on the slope over the past 100 hours, all points appear to be at equilibrium,
+          including the points closest to the heater.
+        </p>
+        <p>
+          To weigh on the safe side and ensure that we have adequate pre-hydration datasets, I think the designated start date of
+          Sunday the 30th for hydration sounds good to me. I will continue monitoring the plots and can make any final checks before then.
         </p>
       </div>
 
       <div class="gallery">
         <figure class="plot">
-          <a href="assets/tank/dielectric_sat_3970_hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dielectric_sat_3970_hours.png?v=20260708" alt="Degree of saturation" loading="lazy" />
+          <a href="assets/tank/dielectric_sat_4995_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_sat_4995_hours.png?v=20260820" alt="Degree of saturation" loading="lazy" />
           </a>
-          <figcaption><strong>Degree of saturation</strong> (~3970 hours)</figcaption>
+          <figcaption><strong>Degree of saturation</strong> (~4995 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/dielectric_temp_3970_hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dielectric_temp_3970_hours.png?v=20260708" alt="Dielectric temperature" loading="lazy" />
+          <a href="assets/tank/dielectric_temp_4995_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_temp_4995_hours.png?v=20260820" alt="Dielectric temperature" loading="lazy" />
           </a>
-          <figcaption><strong>Dielectric temperature</strong> (~3970 hours)</figcaption>
+          <figcaption><strong>Dielectric temperature</strong> (~4995 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/dielectric_vol_3970_hours.png" target="_blank" rel="noopener">
-            <img src="assets/tank/dielectric_vol_3970_hours.png?v=20260708" alt="Volumetric water content" loading="lazy" />
+          <a href="assets/tank/dielectric_vol_4995_hours.png" target="_blank" rel="noopener">
+            <img src="assets/tank/dielectric_vol_4995_hours.png?v=20260820" alt="Volumetric water content" loading="lazy" />
           </a>
-          <figcaption><strong>Volumetric water content</strong> (~3970 hours)</figcaption>
+          <figcaption><strong>Volumetric water content</strong> (~4995 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_3970_hours_Final_Cleaned_heater_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_3970_hours_Final_Cleaned_heater_temp.png?v=20260708" alt="Heater temperature" loading="lazy" />
+          <a href="assets/tank/data_at_4995_hours_Final_Cleaned_heater_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_4995_hours_Final_Cleaned_heater_temp.png?v=20260820" alt="Heater temperature" loading="lazy" />
           </a>
-          <figcaption><strong>Heater temperature</strong> (~3970 hours)</figcaption>
+          <figcaption><strong>Heater temperature</strong> (~4995 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_3970_hours_Final_Cleaned_soil_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_3970_hours_Final_Cleaned_soil_temp.png?v=20260708" alt="Soil temperature" loading="lazy" />
+          <a href="assets/tank/data_at_4995_hours_Final_Cleaned_soil_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_4995_hours_Final_Cleaned_soil_temp.png?v=20260820" alt="Soil temperature" loading="lazy" />
           </a>
-          <figcaption><strong>Soil temperature</strong> (~3970 hours)</figcaption>
+          <figcaption><strong>Soil temperature</strong> (~4995 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_3970_hours_Final_Cleaned_RH_percent.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_3970_hours_Final_Cleaned_RH_percent.png?v=20260708" alt="Relative humidity percent" loading="lazy" />
+          <a href="assets/tank/data_at_4995_hours_Final_Cleaned_RH_percent.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_4995_hours_Final_Cleaned_RH_percent.png?v=20260820" alt="Relative humidity percent" loading="lazy" />
           </a>
-          <figcaption><strong>RH%</strong> (~3970 hours)</figcaption>
+          <figcaption><strong>RH%</strong> (~4995 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_3970_hours_Final_Cleaned_RH_temp.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_3970_hours_Final_Cleaned_RH_temp.png?v=20260708" alt="Relative humidity temperature" loading="lazy" />
+          <a href="assets/tank/data_at_4995_hours_Final_Cleaned_RH_temp.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_4995_hours_Final_Cleaned_RH_temp.png?v=20260820" alt="Relative humidity temperature" loading="lazy" />
           </a>
-          <figcaption><strong>RH temperature</strong> (~3970 hours)</figcaption>
+          <figcaption><strong>RH temperature</strong> (~4995 hours)</figcaption>
         </figure>
 
         <figure class="plot">
-          <a href="assets/tank/data_at_3970_hours_Final_Cleaned_vertical_strain.png" target="_blank" rel="noopener">
-            <img src="assets/tank/data_at_3970_hours_Final_Cleaned_vertical_strain.png?v=20260708" alt="Filtered vertical strain" loading="lazy" />
+          <a href="assets/tank/data_at_4995_hours_Final_Cleaned__vertical_strain.png" target="_blank" rel="noopener">
+            <img src="assets/tank/data_at_4995_hours_Final_Cleaned__vertical_strain.png?v=20260820" alt="Filtered vertical strain" loading="lazy" />
           </a>
-          <figcaption><strong>Vertical strain</strong> filtered plot (~3970 hours)</figcaption>
+          <figcaption><strong>Vertical strain</strong> filtered plot (~4995 hours)</figcaption>
         </figure>
       </div>
     </section>
@@ -124,38 +127,52 @@
     <section id="manual-fix" class="card">
       <div class="card-header">
         <h2>Manual data corrections</h2>
-        <p class="muted">Manual corrections for heater, thermocouple, and RH sensor artifacts.</p>
+        <p class="muted">Manual corrections for heater, thermocouple, RH sensor, and residual spike artifacts.</p>
       </div>
 
       <div class="card-body prose">
         <h3>Update summary</h3>
         <p>
-          During the initial 30 minutes of the heater increase, the readings across two thermocouples and the values from both the heater core and heater surface were somewhat rugged due to instrumental variation.
-          I manually corrected these values by editing the Excel sheets and applying a corrective filter that tied the skewed data back to readings known to be correct at the beginning and end of that window.
-          I also corrected the issues I mentioned in my previous update for the bottom-center thermocouple and the RH reading. These edits are shown in the plots below for the corrected windows.
+          I cleaned the relative humidity sensors that were still showing some residual spikes from the deteriorating power supply.
+          The plots below show the reduced spikes and the correction applied to both the RH% and RH temperature signals.
+          The current sensor behavior looks much cleaner, and these corrected outputs are now carried forward into the most up-to-date tank plots.
         </p>
       </div>
 
       <div class="gallery">
         <figure class="plot">
+          <a href="assets/tank/4995_RH_filter.png" target="_blank" rel="noopener">
+            <img src="assets/tank/4995_RH_filter.png?v=20260820" alt="RH percent spike filtering" loading="lazy" />
+          </a>
+          <figcaption><strong>RH% spike filtering</strong> (~4995 hours)</figcaption>
+        </figure>
+
+        <figure class="plot">
+          <a href="assets/tank/4995_T_filter.png" target="_blank" rel="noopener">
+            <img src="assets/tank/4995_T_filter.png?v=20260820" alt="RH temperature spike filtering" loading="lazy" />
+          </a>
+          <figcaption><strong>RH temperature spike filtering</strong> (~4995 hours)</figcaption>
+        </figure>
+
+        <figure class="plot">
           <a href="assets/tank/heater_core_surface_fix.png" target="_blank" rel="noopener">
-            <img src="assets/tank/heater_core_surface_fix.png?v=20260708" alt="Heater core and surface correction" loading="lazy" />
+            <img src="assets/tank/heater_core_surface_fix.png?v=20260820" alt="Heater core and surface correction" loading="lazy" />
           </a>
           <figcaption><strong>Heater core and surface correction</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/bottom_center_temp_fix.png" target="_blank" rel="noopener">
-            <img src="assets/tank/bottom_center_temp_fix.png?v=20260708" alt="Bottom-center thermocouple correction" loading="lazy" />
+            <img src="assets/tank/bottom_center_temp_fix.png?v=20260820" alt="Bottom-center thermocouple correction" loading="lazy" />
           </a>
           <figcaption><strong>Bottom-center thermocouple correction</strong></figcaption>
         </figure>
 
         <figure class="plot">
           <a href="assets/tank/rh_temp_fix.png" target="_blank" rel="noopener">
-            <img src="assets/tank/rh_temp_fix.png?v=20260708" alt="RH percent and temperature correction" loading="lazy" />
+            <img src="assets/tank/rh_temp_fix.png?v=20260820" alt="RH percent and temperature correction" loading="lazy" />
           </a>
-          <figcaption><strong>RH percent and temperature correction</strong></figcaption>
+          <figcaption><strong>Earlier RH percent and temperature correction</strong></figcaption>
         </figure>
       </div>
     </section>
@@ -166,46 +183,29 @@
     <section id="rh" class="card">
       <div class="card-header">
         <h2>Relative humidity tests</h2>
-        <p class="muted">Requested plots and ongoing progress</p>
+        <p class="muted">Salt-suction testing and ongoing progress</p>
       </div>
 
       <div class="card-body prose">
         <p>
-          I found a total of six papers, and I am currently reviewing and digitizing them to establish a baseline of all the publicly available data I can find from
-          non-isothermal tests of the salts I have already begun testing. I picked up the steel cell cap from the machine shop, and I will begin salt-suction testing next week.
-          The new volumetric test with pure water has started at densities of 1.30, 1.41, 1.50, and 1.60 g/cm³, and I should have results soon. I plan to take check weights
-          on the current 80°C tests next week.
+          The relative humidity testing is progressing as expected. K₂CO₃ now has good salt-suction data, and I will be moving to a new
+          salt once I can get the lid off the current system. I can see how there were troubles in the past removing this after pressurization
+          beyond 100°C.
         </p>
-      </div>
-
-      <div class="gallery two-col">
-        <figure class="plot">
-          <a href="assets/rh/Rh_20and40_degree_vol.png" target="_blank" rel="noopener">
-            <img src="assets/rh/Rh_20and40_degree_vol.png" alt="Updated 20 and 40 degree volumetric water content data" loading="lazy" />
-          </a>
-          <figcaption><strong>Updated 20°C and 40°C volumetric water content data</strong> from both 1.30 and 1.41 Mg/m³ samples</figcaption>
-        </figure>
-
-        <figure class="plot">
-          <a href="assets/rh/Rh_20and40_degree_sat.png" target="_blank" rel="noopener">
-            <img src="assets/rh/Rh_20and40_degree_sat.png" alt="Updated 20 and 40 degree saturation data" loading="lazy" />
-          </a>
-          <figcaption><strong>Updated 20°C and 40°C saturation data</strong> from both 1.30 and 1.41 Mg/m³ samples</figcaption>
-        </figure>
-
-        <figure class="plot">
-          <a href="assets/rh/Rh_20and40_degree_satpor.png" target="_blank" rel="noopener">
-            <img src="assets/rh/Rh_20and40_degree_satpor.png" alt="Updated 20 and 40 degree saturation versus porosity data" loading="lazy" />
-          </a>
-          <figcaption><strong>Updated 20°C and 40°C saturation vs. porosity data</strong> from both 1.30 and 1.41 Mg/m³ samples</figcaption>
-        </figure>
-
-        <figure class="plot">
-          <a href="assets/rh/Rh_20and40_degree_grav.png" target="_blank" rel="noopener">
-            <img src="assets/rh/Rh_20and40_degree_grav.png" alt="Updated 20 and 40 degree gravimetric water content data" loading="lazy" />
-          </a>
-          <figcaption><strong>Updated 20°C and 40°C gravimetric water content data</strong> from both 1.30 and 1.41 Mg/m³ samples</figcaption>
-        </figure>
+        <p>
+          The current ongoing tests at 100°C have not yet been checked for check weights. I am also unsure whether I should allow check
+          weights because I would need to wait for the temperature to reduce before opening and releasing the pressure inside a boiling system,
+          which could cause water to splash or harm the specimens or myself.
+        </p>
+        <p>
+          Because of that, I may wait until the known minimum time window from the other tests, which is about seven weeks. That falls in the
+          first week of September, when I can pull these for final measurement prior to increasing to the next temperature step. I will touch
+          base with you on this the next time we speak.
+        </p>
+        <p>
+          For now, I am continuing salt-suction data monitoring and monitoring the volumetric expansion of the 100% humidity specimens in the
+          room-temperature distilled-water Tupperware.
+        </p>
       </div>
     </section>
 
@@ -221,9 +221,10 @@
       <div class="card-body prose">
         <p><strong>Future work summary:</strong></p>
         <ul>
-          <li>Continue research and development of the correct non-isothermal Lu &amp; McCartney (2024) SWRCs.</li>
-          <li>Continue monitoring the tank after the heater increase.</li>
-          <li>Finish plotting all salt-suction data from the literature review.</li>
+          <li>Give the ~4995-hour tank plots a final check before leaving town Sunday morning.</li>
+          <li>Prepare for the designated Sunday 8/30 hydration start date, assuming the final checks remain acceptable.</li>
+          <li>Continue monitoring salt-suction testing and confirm how to safely handle check weights for the ongoing 100°C tests.</li>
+          <li>Continue monitoring volumetric expansion of the 100% humidity specimens in room-temperature distilled water.</li>
           <li>Plot the thermal conductivity data from the Meter sensors.</li>
         </ul>
       </div>
@@ -236,4 +237,5 @@
   </main>
 
 </body>
+</html>
 </html>
